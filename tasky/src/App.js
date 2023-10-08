@@ -8,6 +8,7 @@ import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 
 
+
 function App() {
   const [ taskState, setTaskState ] = useState({
     tasks: [
@@ -20,6 +21,7 @@ function App() {
   const [ formState, setFormState ] = useState({
     title: "",
     description: "",
+    priorities:"",
     deadline: ""
   });
 
@@ -44,6 +46,9 @@ function App() {
           break;
       case "description":
           form.description = event.target.value;
+          break;
+      case "priorities":
+          form.priorities = event.target.value;
           break;
       case "deadline":
           form.deadline = event.target.value;
@@ -100,6 +105,7 @@ function App() {
                 <Task 
                 title={task.title}
                 description={task.description}
+                priorities={task.priorities}
                 deadline={task.deadline}
                 done={task.done}
                 key={task.id}
